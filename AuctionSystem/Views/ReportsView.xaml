@@ -1,0 +1,28 @@
+<UserControl x:Class="AuctionSystem.Views.ReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Padding="0,0,0,8">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Отчёт:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                <ComboBox x:Name="ReportBox" Width="200" VerticalAlignment="Center"
+                          Margin="0,0,12,0" SelectionChanged="Report_Changed"/>
+                <TextBlock x:Name="ParamLabel" Text="Параметр:" VerticalAlignment="Center"
+                           Margin="0,0,6,0"/>
+                <ComboBox x:Name="ParamBox" Width="240" VerticalAlignment="Center"
+                          Margin="0,0,12,0" DisplayMemberPath="Display" SelectedValuePath="Value"/>
+                <Button Content="Построить" Width="100" Margin="0,0,6,0" Click="Build_Click"/>
+                <Button Content="Печать" Width="90" Click="Print_Click"/>
+            </StackPanel>
+        </Border>
+
+        <Border DockPanel.Dock="Bottom" Padding="0,8,0,0">
+            <TextBlock x:Name="SummaryText" FontWeight="Bold" TextWrapping="Wrap"/>
+        </Border>
+
+        <DataGrid x:Name="Grid" AutoGenerateColumns="True" IsReadOnly="True"
+                  CanUserAddRows="False" HeadersVisibility="Column"
+                  GridLinesVisibility="Horizontal" AlternatingRowBackground="#F2F6FC"
+                  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+    </DockPanel>
+</UserControl>

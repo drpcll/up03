@@ -1,0 +1,27 @@
+<Window x:Class="AuctionSystem.Views.EditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Запись" Height="560" Width="460"
+        ResizeMode="CanResize" WindowStartupLocation="CenterOwner">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="FieldsPanel"/>
+        </ScrollViewer>
+
+        <TextBlock x:Name="ErrorText" Grid.Row="1" Foreground="#C00000" TextWrapping="Wrap"
+                   Margin="0,8,0,0"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right"
+                    Margin="0,12,0,0">
+            <Button Content="Сохранить" Width="110" Margin="0,0,8,0" IsDefault="True"
+                    Click="Save_Click"/>
+            <Button Content="Отмена" Width="90" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

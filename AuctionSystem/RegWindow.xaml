@@ -1,0 +1,75 @@
+﻿<Window x:Class="AuctionSystem.RegWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Регистрация" Height="520" Width="420"
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="16" FontWeight="Bold"
+                   Text="Регистрация" Margin="0,0,0,8"/>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,0,0,8">
+            <RadioButton x:Name="TypeEmployee" Content="Сотрудник"
+                         Margin="0,0,16,0"/>
+            <RadioButton x:Name="TypeSeller" Content="Продавец"
+                         Margin="0,0,16,0"/>
+            <RadioButton x:Name="TypeBuyer" Content="Покупатель"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="2" Text="Фамилия:" VerticalAlignment="Center" Margin="0,4"/>
+        <TextBox x:Name="FamiliyaBox" Grid.Row="2" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock Grid.Row="3" Text="Имя:" VerticalAlignment="Center" Margin="0,4"/>
+        <TextBox x:Name="ImyaBox" Grid.Row="3" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock Grid.Row="4" Text="Отчество:" VerticalAlignment="Center" Margin="0,4"/>
+        <TextBox x:Name="OtchestvoBox" Grid.Row="4" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock Grid.Row="5" Text="Телефон:" VerticalAlignment="Center" Margin="0,4"/>
+        <TextBox x:Name="TelefonBox" Grid.Row="5" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock Grid.Row="6" Text="Email:" VerticalAlignment="Center" Margin="0,4"/>
+        <TextBox x:Name="EmailBox" Grid.Row="6" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock x:Name="AdresLabel" Grid.Row="7" Text="Адрес:" VerticalAlignment="Center" Margin="0,4"/>
+        <TextBox x:Name="AdresBox" Grid.Row="7" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock x:Name="RoleLabel" Grid.Row="8" Text="Роль:" VerticalAlignment="Center" Margin="0,4"/>
+        <ComboBox x:Name="RoleBox" Grid.Row="8" Grid.Column="1" Margin="6,4" DisplayMemberPath="Tip"/>
+
+        <TextBlock Grid.Row="9" Text="Логин:" VerticalAlignment="Center" Margin="0,4"/>
+        <TextBox x:Name="LoginBox" Grid.Row="9" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock Grid.Row="10" Text="Пароль:" VerticalAlignment="Center" Margin="0,4"/>
+        <PasswordBox x:Name="PasswordBox" Grid.Row="10" Grid.Column="1" Margin="6,4"/>
+
+        <TextBlock x:Name="MessageText" Grid.Row="11" Grid.ColumnSpan="2"
+                   TextWrapping="Wrap" Margin="0,8" Foreground="#C00000"/>
+
+        <StackPanel Grid.Row="12" Grid.ColumnSpan="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button Content="Зарегистрировать" Width="130" Margin="0,0,8,0"
+                    Click="RegisterButton_Click"/>
+            <Button Content="Отмена" Width="90" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>
